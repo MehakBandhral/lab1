@@ -1,8 +1,9 @@
+
 pipeline { 
     agent any 
 
     tools { 
-        gradle 'Gradle' // Exact name from Jenkins > Global Tool Configuration
+        gradle  'Gradle 8.13' // Exact name from Jenkins > Global Tool Configuration
     } 
 
     stages { 
