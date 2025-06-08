@@ -27,7 +27,7 @@ pipeline {
 
         stage('Run Application') { 
             steps { 
-                bat 'java -jar app/build/libs/lab1-0.0.1-SNAPSHOT.jar'
+                bat 'java -jar build/libs/lab1-0.0.1-SNAPSHOT.jar'
             } 
         }
     }
