@@ -1,0 +1,33 @@
+pipeline { 
+    agent any 
+
+    tools { 
+        gradle 'Gradle 8.13' // Exact name from Jenkins > Global Tool Configuration
+    } 
+
+    stages { 
+        stage('Checkout') { 
+            steps { 
+                git branch: 'master', url: 'https://github.com/MehakBandhral/lab1.git'
+            } 
+        } 
+
+        stage('Build') { 
+            steps { 
+                bat './gradlew.bat build'
+            } 
+        } 
+
+        stage('Test') { 
+            steps { 
+                bat './gradlew.bat test'
+            } 
+        } 
+
+        stage('Run Application') { 
+            steps { 
+                bat 'java -jar app/build/libs/app.jar'
+            } 
+        }
+    }
+}
